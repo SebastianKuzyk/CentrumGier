@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    background-image: url(123.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 315px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.cell:hover:not(.taken) {
+    background-color: #dee2e6;
+    transform: scale(1.05);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    color: #495057;
+}
+
+.winner {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    width: 420px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.memory-cell {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #ddd;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.2s;
+}
+
+.memory-cell.flipped {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.memory-cell.matched {
+    background-color: lightgreen;
+    cursor: default;
+    transform: scale(1);
+}
+
